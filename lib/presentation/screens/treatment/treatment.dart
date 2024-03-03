@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:t_grow/presentation/components/custom_bottom.dart';
 
 import '../../../app/app_colors.dart';
 import '../../../app/app_images.dart';
@@ -16,14 +18,17 @@ class _TreatmentState extends State<Treatment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
-        leading: IconButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
-        },icon: const Icon(Icons.arrow_back_ios),),
-        title: const Text(
-          "profile",
+        toolbarHeight: 100.h,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios),
+        ),
+        title:  Text(
+          "Treatment",
           style: TextStyle(
-              fontSize: 24,
+              fontSize: 24.sp,
               fontWeight: FontWeight.w600,
               color: AppColors.greenColor),
         ),
@@ -32,7 +37,6 @@ class _TreatmentState extends State<Treatment> {
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
-
             Expanded(
               child: ListView.separated(
                   itemBuilder: (context, item) {
@@ -40,27 +44,32 @@ class _TreatmentState extends State<Treatment> {
                       children: [
                         Image.asset(
                           AppImages.pic17,
-                          width: 78,
-                          height: 75,
+                          width: 78.w,
+                          height: 75.h,
                         ),
-                        const SizedBox(
-                          width: 10,
+                        SizedBox(
+                          width: 10.w,
                         ),
-                        const Expanded(
+                         Expanded(
                             child: Text(
                           "You should spray water which spider exists.",
                           style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w400),
+                              fontSize: 12.sp, fontWeight: FontWeight.w400),
                         )),
                       ],
                     );
                   },
                   separatorBuilder: (context, item) {
-                    return const SizedBox(
-                      height: 50,
+                    return SizedBox(
+                      height: 30.h,
                     );
                   },
                   itemCount: 5),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 70),
+              child: CustomBottom(
+                  name: "Start Tracking", width: 203.w, height: 37.h),
             )
           ],
         ),

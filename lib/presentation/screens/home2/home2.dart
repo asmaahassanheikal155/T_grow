@@ -1,6 +1,6 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_grow/app/app_colors.dart';
 import 'package:t_grow/app/app_images.dart';
 
@@ -26,161 +26,158 @@ class _Home2State extends State<Home2> {
                   width: double.infinity,
                   child: Image.asset(
                     AppImages.pic1,
-                    height: 240,
-                    width: 386,
+                    height: 240.h,
+                    width: 386.w,
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: 30.h,
               ),
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Container(
-                  width: 249,
-                  height: 217,
+                  width: 249.w,
+                  height: 217.h,
                   decoration: BoxDecoration(
                       color: AppColors.begColor.withOpacity(.3),
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(120),
                           topRight: Radius.circular(120),
                           bottomLeft: Radius.circular(10),
                           bottomRight: Radius.circular(10))),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
                       Image.asset(
                         AppImages.pic5,
-                        width: 64,
-                        height: 64,
+                        width: 64.w,
+                        height: 64.h,
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
-                      const Text(
+                       Text(
                         "AI algorithm",
                         style: TextStyle(
                             color: AppColors.darkColor,
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 10.h,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(10),
+                       Padding(
+                        padding: const EdgeInsets.all(10),
                         child: Text(
                             "Our algorithm recognizes plant and find diseases .It is also possible to give tips on how to take care of plant sbased on the huge plant database",
                             style: TextStyle(
                                 color: AppColors.darkColor,
-                                fontSize: 10,
+                                fontSize: 10.sp,
                                 fontWeight: FontWeight.w400)),
                       ),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: 50.h,
               ),
-              const Align(
+               Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 20,top: 20),
+                    padding: const EdgeInsets.only(left: 20, top: 20),
                     child: Text(
                       "Recently added",
                       style: TextStyle(
                           color: AppColors.darkColor,
-                          fontSize: 22,
+                          fontSize: 22.sp,
                           fontWeight: FontWeight.bold),
                     ),
                   )),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 15),
-                  child: ListView.separated(scrollDirection: Axis.horizontal,
+                  padding:  const EdgeInsets.only(left: 15),
+                  child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
                       itemBuilder: (context, item) {
-                        return   Container(
-                          width: 244,
-                          height: 105,
+                        return SizedBox(
+                          width: 244.w,
+                          height: 105.h,
                           // padding: EdgeInsets.only(top: ),
                           child: Row(
                             children: [
                               Image.asset(
                                 AppImages.pic7,
-                                width: 80,
-                                height: 80,
+                                width: 80.w,
+                                height: 80.h,
                                 fit: BoxFit.fill,
                               ),
-                              const SizedBox(
-                                width: 10,
+                              SizedBox(
+                                width: 10.w,
                               ),
-                               Expanded(
-                                 child: SizedBox(
-                                   height: 105,
-                                   child: Column(
-                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                     children: [
-                                                   Text(
-                                                       "Late blight",
-                                                       style: TextStyle(
-                                                           color: AppColors.clearGreenColor,
-                                                           fontSize: 17,
-                                                           fontWeight: FontWeight.bold),
-                                                     ),
-                                 
-                                        Text(
-                                          maxLines: 3,
-                                          overflow: TextOverflow.ellipsis,
-                                           "Is one of the most serious fungal diseases that can affect tomatoes and potatoes. Late blight is spread from infected transplants, volunteer potato or tomato plants, and certain weeds botanically related to tomatoes. Spores of this fungus can be airborne and travel great distances in storms.",
-                                           style: TextStyle(fontSize: 11),
-                                         ),
-                                 
-                                     ],
-                                   ),
-                                 ),
-                               ),
-
+                              Expanded(
+                                child: SizedBox(
+                                  height: 105.h,
+                                  child:  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Late blight",
+                                        style: TextStyle(
+                                            color: AppColors.clearGreenColor,
+                                            fontSize: 17.sp,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        maxLines: 3,
+                                        overflow: TextOverflow.ellipsis,
+                                        "Is one of the most serious fungal diseases that can affect tomatoes and potatoes. Late blight is spread from infected transplants, volunteer potato or tomato plants, and certain weeds botanically related to tomatoes. Spores of this fungus can be airborne and travel great distances in storms.",
+                                        style: TextStyle(fontSize: 11.sp),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         );
-
                       },
                       separatorBuilder: (context, item) {
                         return SizedBox(
-                          width: 10,
+                          width: 10.w,
                         );
                       },
                       itemCount: 10),
                 ),
               ),
-
             ],
           ),
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: Column(
               children: [
-                const SizedBox(height: 150),
+                SizedBox(height: 150.h),
                 Image.asset(
                   AppImages.pic2,
-                  width: 50,
-                  height: 60,
+                  width: 50.w,
+                  height: 60.h,
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Image.asset(
                   AppImages.pic3,
-                  width: 50,
-                  height: 60,
+                  width: 50.w,
+                  height: 60.h,
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Image.asset(
                   AppImages.pic4,
-                  width: 50,
-                  height: 60,
+                  width: 50.w,
+                  height: 60.h,
                 ),
               ],
             ),

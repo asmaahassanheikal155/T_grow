@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_grow/presentation/screens/clear_notification/clear_notification.dart';
 import 'package:t_grow/presentation/screens/profile/profile.dart';
 
@@ -17,30 +18,33 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: 100.h,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),
-        title: const Text(
+        title:  Text(
           "Notification",
           style: TextStyle(
-              fontSize: 24,
+              fontSize: 24.sp,
               fontWeight: FontWeight.w600,
               color: AppColors.greenColor),
         ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: InkWell(onTap: (){ Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => ClearNotification()),
-                    );},
-              child: const Text("Clear",
+            child: InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ClearNotification()),
+                );
+              },
+              child:  Text("Clear",
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.clearGreenColor)),
             ),
@@ -48,7 +52,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(5),
+        padding: const EdgeInsets.all(5),
         child: Column(
           children: [
             Expanded(
@@ -57,8 +61,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     return Container(
                       margin: const EdgeInsets.only(
                           top: 10, right: 5, bottom: 5, left: 10),
-                      width: 358,
-                      height: 95,
+                      width: 358.w,
+                      height: 95.h,
                       decoration: BoxDecoration(
                         color: AppColors.fColor.withOpacity(.48),
                         borderRadius: const BorderRadius.only(
@@ -71,42 +75,40 @@ class _NotificationScreenState extends State<NotificationScreen> {
                             color: AppColors.aColor.withOpacity(0.5),
                             spreadRadius: 0,
                             blurRadius: 4,
-                            offset: Offset(0, 4), // changes position of shadow
+                            offset: const Offset(
+                                0, 4), // changes position of shadow
                           ),
                         ],
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Container(
-                              child: Image.asset(
+                          Image.asset(
                             AppImages.pic20,
                             fit: BoxFit.fill,
-                          )),
-                          const Expanded(
+                          ),
+                           Expanded(
                             child: Padding(
-                              padding: EdgeInsets.only(left: 10, right: 10),
+                              padding: const EdgeInsets.only(left: 10, right: 10),
                               child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional.topStart,
+                                      alignment: AlignmentDirectional.topStart,
                                       child: Text(
                                         "Provide Lots of Light",
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 16.sp,
                                             fontWeight: FontWeight.w600,
                                             color: AppColors.clearGreenColor),
                                       ),
                                     ),
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional.topStart,
+                                      alignment: AlignmentDirectional.topStart,
                                       child: Text(
                                         "Water tomato plants deeply and regularly while the fruits are developing.",
                                         style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 12.sp,
                                             fontWeight: FontWeight.w500,
                                             color: AppColors.greenColor),
                                       ),
@@ -119,8 +121,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     );
                   },
                   separatorBuilder: (context, item) {
-                    return const Divider(thickness: 1,
-                      height: 10,
+                    return  Divider(
+                      thickness: 1,
+                      height: 10.h,
                       color: Colors.grey,
                     );
                   },

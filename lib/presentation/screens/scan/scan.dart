@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:t_grow/app/app_colors.dart';
 import 'package:t_grow/app/app_images.dart';
@@ -24,18 +25,18 @@ class _ScanState extends State<Scan> {
               Center(
                   child: Image.asset(
                 AppImages.pic8,
-                width: 260,
-                height: 260,
+                width: 260.w,
+                height: 260.h,
               )),
-              const SizedBox(
-                height: 50,
+               SizedBox(
+                height: 50.h,
               ),
-              const Text(
+               Text(
                 "You haven’t added any plants yet. ",
-                style: TextStyle(fontSize: 22, color: AppColors.greenColor),
+                style: TextStyle(fontSize: 22.sp, color: AppColors.greenColor),
               ),
-              const SizedBox(
-                height: 60,
+               SizedBox(
+                height: 60.h,
               ),
               InkWell(
                   onTap: () {
@@ -43,7 +44,7 @@ class _ScanState extends State<Scan> {
                       context: context,
                       builder: (BuildContext context) {
                         return Container(
-                          height: 300,
+                          height: 300.h,
                           decoration: const BoxDecoration(
                               color: AppColors.whiteColor,
                               borderRadius: BorderRadius.only(
@@ -57,24 +58,24 @@ class _ScanState extends State<Scan> {
                                   children: [
                                     IconButton(onPressed: (){
                                       Navigator.of(context).pop();
-                                    }, icon: Icon(Icons.close))
+                                    }, icon: const Icon(Icons.close))
                                   ],
                                 ),
-                                Padding(
+                                 Padding(
                                   padding: const EdgeInsets.only(left: 20),
                                   child: Row(
                                     children: [
                                       Text(
                                         "Add a plant to your history",
                                         style: TextStyle(
-                                            fontSize: 20,
+                                            fontSize: 20.sp,
                                             color: AppColors.greenColor),
                                       ),
                                     ],
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 40,
+                                 SizedBox(
+                                  height: 40.h,
                                 ),
                                 InkWell(
                                   onTap: () {
@@ -86,8 +87,8 @@ class _ScanState extends State<Scan> {
                                     );
                                   },
                                   child: Container(
-                                    width: 350,
-                                    height: 53,
+                                    width: 350.w,
+                                    height: 53.h,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(50),
                                         border: Border.all(
@@ -99,17 +100,17 @@ class _ScanState extends State<Scan> {
                                         children: [
                                           Image.asset(
                                             AppImages.pic10,
-                                            width: 32,
-                                            height: 32,
+                                            width: 32.w,
+                                            height: 32.h,
                                           ),
                                           SizedBox(
-                                            width: 40,
+                                            width: 40.w,
                                           ),
-                                          Text(
+                                           Text(
                                             "Identify by camera",
                                             style: TextStyle(
                                                 color: AppColors.greenColor,
-                                                fontSize: 22),
+                                                fontSize: 22.sp),
                                           )
                                         ],
                                       ),
@@ -117,7 +118,7 @@ class _ScanState extends State<Scan> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20,
+                                  height: 20.h,
                                 ),
                                 InkWell(
                                   onTap: () {
@@ -131,8 +132,8 @@ class _ScanState extends State<Scan> {
                                     );
                                   },
                                   child: Container(
-                                    width: 350,
-                                    height: 53,
+                                    width: 350.w,
+                                    height: 53.h,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(50),
                                         border: Border.all(
@@ -144,17 +145,17 @@ class _ScanState extends State<Scan> {
                                         children: [
                                           Image.asset(
                                             AppImages.pic11,
-                                            width: 32,
-                                            height: 32,
+                                            width: 32.w,
+                                            height: 32.h,
                                           ),
                                           SizedBox(
-                                            width: 40,
+                                            width: 40.w,
                                           ),
-                                          Text(
+                                           Text(
                                             "Identify by phone",
                                             style: TextStyle(
                                                 color: AppColors.greenColor,
-                                                fontSize: 22),
+                                                fontSize: 22.sp),
                                           )
                                         ],
                                       ),
@@ -170,8 +171,8 @@ class _ScanState extends State<Scan> {
                   },
                   child: CustomBottom(
                     name: "add a plant",
-                    width: 300,
-                    height: 50,
+                    width: 300.w,
+                    height: 50.h,
                   )),
             ],
           ),

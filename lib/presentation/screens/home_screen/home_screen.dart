@@ -2,6 +2,7 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:t_grow/app/app_colors.dart';
 import 'package:t_grow/app/app_icons.dart';
@@ -48,8 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: SizedBox(
-        width: 70,
-        height: 70,
+        width: 70.w,
+        height: 70.h,
+
         child: DecoratedBox(
           decoration: BoxDecoration(
             color: AppColors.greenColor,
@@ -59,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Colors.black.withOpacity(.25),
                   blurStyle: BlurStyle.inner,
                   blurRadius: 8,
-                  offset: Offset(1, 1))
+                  offset: const Offset(1, 1))
             ],
           ),
           child: FloatingActionButton(
@@ -72,13 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
               AppIcons.scan,
               color: AppColors.whiteColor,
             ),
-            shape: CircleBorder(),
+            shape: const CircleBorder(),
           ),
         ),
       ),
       bottomNavigationBar: Container(
         clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(25),
             topRight: Radius.circular(25),
@@ -86,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: BottomAppBar(
           notchMargin: 10,
-          height: 90,
+          height: 90.h,
           elevation: 1.3,
           color: const Color(0xffF9F9F9).withOpacity(.88),
           shape: const CircularNotchedRectangle(),
@@ -111,15 +113,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               : AppColors.greenColor,
                         ),
                         SizedBox(
-                          height: 4,
+                          height: 3.h,
                         ),
                         Text(
                           "1".tr(context),
-                          style: TextStyle(
+                          style:  TextStyle(
                               color: AppColors.greenColor,
                               fontWeight: FontWeight.w500,
                               fontFamily: "poppins",
-                              fontSize: 14),
+                              fontSize: 14.sp),
                         ),
                       ],
                     ),
@@ -139,16 +141,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               ? AppColors.clearGreenColor
                               : AppColors.greenColor,
                         ),
-                        const SizedBox(
-                          height: 4,
+                         SizedBox(
+                          height: 4.h,
                         ),
-                        const Text(
+                         Text(
                           "History",
                           style: TextStyle(
                               color: AppColors.greenColor,
                               fontWeight: FontWeight.w500,
                               fontFamily: "poppins",
-                              fontSize: 14),
+                              fontSize: 14.sp),
                         ),
                       ],
                     ),
@@ -168,22 +170,22 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Image.asset(
                           AppImages.chatboot,
-                          width: 28,
-                          height: 28,
+                          width: 28.w,
+                          height: 28.h,
                           color: currentIndex == 2
                               ? AppColors.clearGreenColor
                               : AppColors.greenColor,
                         ),
-                        SizedBox(
-                          height: 4,
+                         SizedBox(
+                          height: 4.h,
                         ),
-                        Text(
-                          "Chatbot",
+                         Text(
+                          "Chat bot",
                           style: TextStyle(
                               color: AppColors.greenColor,
                               fontWeight: FontWeight.w500,
                               fontFamily: "poppins",
-                              fontSize: 14),
+                              fontSize: 14.sp),
                         )
                       ],
                     ),
@@ -204,15 +206,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               : AppColors.greenColor,
                         ),
                         SizedBox(
-                          height: 4,
+                          height: 4.h,
                         ),
-                        Text(
+                         Text(
                           "Profile",
                           style: TextStyle(
                               color: AppColors.greenColor,
                               fontWeight: FontWeight.w500,
                               fontFamily: "poppins",
-                              fontSize: 14),
+                              fontSize: 14.sp),
                         )
                       ],
                     ),

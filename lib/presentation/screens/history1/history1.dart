@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_grow/app/app_colors.dart';
 import 'package:t_grow/app/app_images.dart';
 import 'package:t_grow/presentation/screens/home_screen/home_screen.dart';
@@ -15,14 +16,14 @@ class _History1State extends State<History1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: 100.h,
         leading: IconButton(onPressed: (){
-           Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+           Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
         },icon: const Icon(Icons.arrow_back_ios),),
-        title: const Text(
+        title:  Text(
           "History",
           style: TextStyle(
-              fontSize: 24,
+              fontSize: 24.sp,
               fontWeight: FontWeight.w600,
               color: AppColors.greenColor),
         ),
@@ -41,33 +42,33 @@ class _History1State extends State<History1> {
                         children: [
                           Image.asset(
                             AppImages.pic7,
-                            width: 80,
-                            height: 80,
+                            width: 80.w,
+                            height: 80.h,
                           ),
                           const SizedBox(
                             width: 10,
                           ),
-                          const Expanded(
+                           Expanded(
                             child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                   Row(
+                                    Row(
                                         mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             "Image",
                                             style: TextStyle(
                                                 color: AppColors.clearGreenColor,
-                                                fontSize: 16,
+                                                fontSize: 16.sp,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                         ],
                                       ),
                             
-                                     SizedBox(height: 5),
-                                    Text(
-                                        "This plant suffers from late blight which infect many crops of tomato. It appears as  small dead spots, lightto dark green, somewhat circular and water-soaked ....",
-                                        style: TextStyle(fontSize: 10),
+                                     SizedBox(height: 5.h),
+                                     Text(
+                                        "This plant suffers from late blight which infect many crops of tomato. It appears as  small dead spots, light to dark green, somewhat circular and water-soaked ....",
+                                        style: TextStyle(fontSize: 10.sp),
                                       ),
                                     
                                   ],
@@ -79,8 +80,8 @@ class _History1State extends State<History1> {
                       );
                     },
                     separatorBuilder: (context, item) {
-                      return const SizedBox(
-                        height: 16,
+                      return  SizedBox(
+                        height: 16.h,
                       );
                     },
                     itemCount: 10),

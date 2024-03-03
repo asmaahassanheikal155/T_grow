@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_grow/app/app_images.dart';
 import 'package:t_grow/presentation/components/custom_bottom.dart';
-import 'package:t_grow/presentation/screens/home_screen/home_screen.dart';
 
 import '../../../app/app_colors.dart';
 
@@ -17,15 +17,15 @@ class _ChatBotState extends State<ChatBot> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: 100.h,
         leading: IconButton(onPressed: (){
           Navigator.of(context).pop();
 
         },icon: const Icon(Icons.arrow_back_ios),),
-        title: const Text(
+        title:  Text(
           "Chat bot",
           style: TextStyle(
-              fontSize: 24,
+              fontSize: 24.sp,
               fontWeight: FontWeight.w600,
               color: AppColors.greenColor),
         ),
@@ -35,22 +35,22 @@ class _ChatBotState extends State<ChatBot> {
         child: Column(
           children: [
 
-            const SizedBox(height: 150,),
-            const Text(
+             SizedBox(height: 150.h),
+             Text(
               "Hello i am your virtual guide",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,color: AppColors.greenColor)),
-              const Text(
+              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600,color: AppColors.greenColor)),
+               Text(
               "and will help you",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,color: AppColors.greenColor)),
-                const Text(
+              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600,color: AppColors.greenColor)),
+                 Text(
               "in planting",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,color: AppColors.greenColor),
+              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600,color: AppColors.greenColor),
 
             ),
-            const SizedBox(height: 10,),
-            Center(child: Image.asset(AppImages.pic18,width: 128,height: 128,)),
-            const SizedBox(height: 50,),
-            CustomBottom(name: "start", width: 203, height: 37)
+             SizedBox(height: 10.h,),
+            Center(child: Image.asset(AppImages.pic18,width: 128.w,height: 128.h,)),
+             SizedBox(height: 50.h,),
+            CustomBottom(name: "start", width: 203.w, height: 37.h)
 
 
 
