@@ -12,6 +12,7 @@ class AppColors{
   static const fColor=Color(0xff00AB07);
   static const aColor=Color(0xff8ACB88);
   static const bColor=Color(0xffDBE2D3);
+  static const lColor=Color(0xff8ACB88);
 
 
 

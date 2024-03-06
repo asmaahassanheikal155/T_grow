@@ -8,7 +8,12 @@ class Loading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Image.asset(AppImages.pic2)),
+      appBar: AppBar(
+        actions: const [
+          Icon(Icons.close),
+        ],
+      ),
+      body:Center(child:Image.asset(AppImages.pic19))
     );
   }
 }

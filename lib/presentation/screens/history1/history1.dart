@@ -4,6 +4,8 @@ import 'package:t_grow/app/app_colors.dart';
 import 'package:t_grow/app/app_images.dart';
 import 'package:t_grow/presentation/screens/home_screen/home_screen.dart';
 
+import '../plant/plant.dart';
+
 class History1 extends StatefulWidget {
   const History1({super.key});
 
@@ -64,18 +66,18 @@ class _History1State extends State<History1> {
                                           ),
                                         ],
                                       ),
-                            
+
                                      SizedBox(height: 5.h),
                                      Text(
                                         "This plant suffers from late blight which infect many crops of tomato. It appears as  small dead spots, light to dark green, somewhat circular and water-soaked ....",
                                         style: TextStyle(fontSize: 10.sp),
                                       ),
-                                    
+
                                   ],
                                 ),
                           ),
 
-                          
+
                         ],
                       );
                     },
