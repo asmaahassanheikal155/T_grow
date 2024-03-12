@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:t_grow/presentation/screens/alert.dart';
-import 'package:t_grow/presentation/screens/chat_bot/chat_bot.dart';
-import 'package:t_grow/presentation/screens/home1/home1.dart';
-import 'package:t_grow/presentation/screens/home2/home2.dart';
-import 'package:t_grow/presentation/screens/home_screen/home_screen.dart';
-import 'package:t_grow/presentation/screens/plant/plant.dart';
-import 'package:t_grow/presentation/screens/scan1/scan1.dart';
-import 'package:t_grow/presentation/screens/scan2/scan2.dart';
-import 'package:t_grow/presentation/screens/treatment/treatment.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:t_grow/presentation/views/first_photo/view.dart';
+import 'package:t_grow/presentation/views/home_screen/view.dart';
+import 'package:t_grow/presentation/views/payment/view.dart';
 import 'core/local/app_local.dart';
+import 'presentation/views/forth_photo/view.dart';
+import 'presentation/views/first_screen/view.dart';
+import 'presentation/views/forget_password/view.dart';
+import 'presentation/views/login/view.dart';
+import 'presentation/views/main/view.dart';
+import 'presentation/views/new_password/view.dart';
+import 'presentation/views/password_changed/view.dart';
+import 'presentation/views/payment2/view.dart';
+import 'presentation/views/start/view.dart';
+import 'presentation/views/third_photo/view.dart';
+import 'presentation/views/tracking1/view.dart';
+import 'presentation/views/tracking2/view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +47,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const HomeScreen(),
+        home: const FirstScreen(),
       ),
     );
   }

@@ -22,7 +22,33 @@ class AppImages{
   static const String pic22="${imagePath}pic22.png";
   static const String leaf="${imagePath}leaf.png";
   static const String about="${imagePath}about.png";
+  static const String V="${imagePath}V.svg";
+  static const String C="${imagePath}C.svg";
+  static const String L="${imagePath}L.svg";
+  static const String G="${imagePath}G.svg";
+  static const String P="${imagePath}P.svg";
   static const String chatboot="${imagePath}chatboot.png";
+  static const String facebookLogo = "${imagePath}facebook logo.png";
+  static const String FirstPhoto = "${imagePath}First.png";
+  static const String SecondPhoto = "${imagePath}Second.png";
+  static const String ThirdPhoto = "${imagePath}Third.png";
+  static const String ForthPhoto = "${imagePath}Forth.png";
+  static const String googleLogo = "${imagePath}google logo.png";
+  static const String iphonelogo = "${imagePath}iphone logo.png";
+  static const String TGrowLogo = "${imagePath}T grow logo.png";
+  static const String firstimage = "${imagePath}First photo.png";
+  static const String Backgroundd = "${imagePath}backgroundd.jpg";
+  static const String Sticker = "${imagePath}Sticker.png";
+  static const String ChatBot = "${imagePath}chatbot.png";
+  static const String Background_chat = "${imagePath}Backgrroundd_chat.jpg";
+  static const String esh = "${imagePath}esh.jpg";
+  static const String chatbot1 = "${imagePath}chatbot 1.png";
+  static const String person_image = "${imagePath}person_image.jpg";
+  static const String leaf1 = "${imagePath}leaf1.png";
+  static const String plant1 = "${imagePath}plant 1.png";
+  static const String plant2 = "${imagePath}plant2.jpg";
+  static const String vector = "${imagePath}vector.jpg";
+  static const String tomatoplant = "${imagePath}tomato plant.png";
 
 
 }
