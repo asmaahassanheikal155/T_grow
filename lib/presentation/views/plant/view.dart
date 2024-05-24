@@ -117,7 +117,7 @@ class _PlantState extends State<Plant> {
                   height: 37.h,
                   decoration: BoxDecoration(
                       color: AppColors.greenColor,
-                      borderRadius: BorderRadius.circular(20)),
+                      borderRadius: BorderRadius.circular(20.r)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -125,6 +125,7 @@ class _PlantState extends State<Plant> {
                        SizedBox(width: 5.w),
                        Text(
                         "Treatment",
+
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 16.sp,

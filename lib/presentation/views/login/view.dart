@@ -5,6 +5,7 @@ import 'package:t_grow/presentation/components/custom_bottom.dart';
 import 'package:t_grow/presentation/views/home_screen/view.dart';
 import '../../../app/app_colors.dart';
 import '../../../app/app_images.dart';
+import '../first_photo/view.dart';
 import '../forget_password/view.dart';
 import '../sign_up/view.dart';
 
@@ -103,7 +104,7 @@ class _LogInState extends State<LogIn> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const HomeScreen()));
+                                  builder: (context) =>  const FirstPhoto()));
                         },
                         child: CustomBottom(
                             name: "Login", width: 344.w, height: 49)),

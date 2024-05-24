@@ -209,6 +209,14 @@ class _ProfileMainState extends State<ProfileMain> {
                                   decoration: BoxDecoration(
                                       color: AppColors.lColor,
                                       borderRadius: BorderRadius.circular(24)),
+                                  child:const Column(
+                                    children: [
+                                      Text("English",style: TextStyle(color: AppColors.greenColor),),
+                                      Text("English",style: TextStyle(color: AppColors.clearGreenColor),),
+                                      Text("Arabic",style: TextStyle(color: AppColors.clearGreenColor),)
+
+                                    ],
+                                  )
                                 ),
                               ],
                             ),
