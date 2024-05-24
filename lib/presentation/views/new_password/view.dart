@@ -74,6 +74,7 @@ class _NewPasswordState extends State<NewPassword> {
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+
                   filled: true,
                   hintText: "Password",
                   fillColor: Colors.white,

@@ -171,8 +171,8 @@ class _ScanState extends State<Scan> {
                   },
                   child: CustomBottom(
                     name: "add a plant",
-                    width: 300.w,
-                    height: 50.h,
+                    width: 203.w,
+                    height: 37.h,
                   )),
             ],
           ),

@@ -6,11 +6,12 @@ import 'package:image_picker/image_picker.dart';
 import 'package:t_grow/app/app_colors.dart';
 import 'package:t_grow/app/app_icons.dart';
 import 'package:t_grow/app/app_images.dart';
-import 'package:t_grow/core/local/app_local.dart';
+import 'package:t_grow/data/core/local/app_local.dart';
 
 import '../chat_bot/view.dart';
 import '../history1/view.dart';
 import '../home1/view.dart';
+import '../home2/view.dart';
 import '../profile/view.dart';
 import '../scan/view.dart';
 
@@ -23,7 +24,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   static const List<Widget> _widgetOptions = <Widget>[
-    Home1(),
+    Home2(),
     History1(),
     ChatBot(),
     Scan(),

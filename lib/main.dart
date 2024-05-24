@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_grow/presentation/views/first_photo/view.dart';
+import 'package:t_grow/presentation/views/helper_method.dart';
 import 'package:t_grow/presentation/views/home_screen/view.dart';
 import 'package:t_grow/presentation/views/payment/view.dart';
-import 'core/local/app_local.dart';
+import 'package:t_grow/presentation/views/sign_up/view.dart';
+import 'data/core/local/app_local.dart';
+import 'data/cubits/lang/lang_cubit.dart';
+import 'data/cubits/register/register_cubit.dart';
 import 'presentation/views/forth_photo/view.dart';
 import 'presentation/views/first_screen/view.dart';
 import 'presentation/views/forget_password/view.dart';
@@ -27,27 +32,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(390,844),
-      builder: (context,child)=>
-       MaterialApp(
-        localizationsDelegates: const [
-          GlobalMaterialLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          AppLocalizations.delegate
-        ],
-        supportedLocales: const [
-          Locale('ar', "EG"),
-          Locale('en', "US"),
-        ],
-        locale: const Locale('en'),
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const FirstScreen(),
+    return BlocProvider(
+    create: (context) => LangCubit()..getCachedLang(),
+
+      child:ScreenUtilInit(
+
+
+
+        designSize: const Size(390, 844),
+
+        builder: (context, child) =>
+           BlocProvider(
+
+              create: (BuildContext context) => RegisterCubit(),
+              child: MaterialApp(
+                navigatorKey: navigatorKey,
+                localizationsDelegates: const [
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  AppLocalizations.delegate
+                ],
+                supportedLocales: const [
+                  Locale('ar', "EG"),
+                  Locale('en', "US"),
+                ],
+                locale: const Locale('en'),
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData(
+                  colorScheme: ColorScheme.fromSeed(
+                      seedColor: Colors.deepPurple),
+                  useMaterial3: true,
+                ),
+                home: const Start(),
+              ),
+            ),
       ),
     );
   }
