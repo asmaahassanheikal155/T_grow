@@ -1,18 +1,24 @@
 
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:t_grow/cubit/upload_image_cubit/Upload_image_states.dart';
+import 'package:t_grow/cubit/upload_image_cubit/upload_image_cubit.dart';
+import 'package:t_grow/plant_model/plant_model.dart';
 import 'package:t_grow/presentation/components/custom_bottom.dart';
 
 import '../../../app/app_images.dart';
 import '../plant/view.dart';
 
 class Scan2 extends StatefulWidget {
-  Scan2({super.key, required this.source});
+  const Scan2({
+    super.key,
+    required this.imageUrl,
+  });
 
-  ImageSource source;
+  final String? imageUrl;
 
   @override
   State<Scan2> createState() => _Scan2State();
@@ -125,31 +131,53 @@ class _Scan2State extends State<Scan2> {
                     SizedBox(
                       height: 20.h,
                     ),
-                    InkWell(
-                        onTap: () async {
-                          await _uploadImage();
-                        },
-                        child: CustomBottom(
-                            name: "Got it", width: 203.w, height: 37.h)),
+                    Row(children: [
+                    BlocConsumer<UploadImageCubit, UploadImageState>(
+                      listener: (context, state) {
+                        if (state is ModelSuccess) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => Plant(
+                                    imageUrl:
+                                        UploadImageCubit.get(context).image,
+                                    treatmentTitle:
+                                        state.aiModel.treatmentTitle,
+                                    treatmentContent:
+                                        state.aiModel.treatmentContent)),);}
+                      }, builder: (context, state) {
+                        return  InkWell(
+                            onTap: () {
+                             UploadImageCubit.get(context).getPlantData(image: UploadImageCubit().image!);
+                             Expanded(
+                                  child: CustomBottom(
+                                    name: "Got it", width: 203.w, height: 37.h),
+                                );
+
+                            }
+                            );
+
+                      },
+                    ),
                   ],
                 ),
-              ),
+              ]),
             ),
           ),
-        ],
+          )],
       ),
     );
   }
 
-  XFile? pickedImage;
-
-  Future<void> _uploadImage() async {
-    final picker = ImagePicker();
-    pickedImage = await picker.pickImage(source: widget.source);
-    setState(() {});
-    if (pickedImage != null) {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => Plant(image: pickedImage!)));
-    }
-  }
+// XFile? pickedImage;
+//
+// Future<void> _uploadImage() async {
+//   final picker = ImagePicker();
+//   pickedImage = await picker.pickImage(source: widget.source);
+//   setState(() {});
+//   if (pickedImage != null) {
+//     Navigator.push(context,
+//         MaterialPageRoute(builder: (context) => Plant(image: pickedImage!)));
+//   }
+// }
 }

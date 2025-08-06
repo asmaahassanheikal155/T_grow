@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_grow/presentation/components/custom_bottom.dart';
 import 'package:t_grow/presentation/views/treatment/view.dart';
 import '../../../app/app_colors.dart';
 import '../../../app/app_images.dart';
+import '../../../cubit/upload_image_cubit/Upload_image_states.dart';
+import '../../../cubit/upload_image_cubit/upload_image_cubit.dart';
 
 class Payment2 extends StatefulWidget {
    const Payment2({super.key});
@@ -102,11 +105,24 @@ class _Payment2State extends State<Payment2> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      InkWell(onTap:(){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Treatment()));
-                },
-                          child: CustomBottom(name: "Done", width:203.w, height: 37.h,color: AppColors.clearGreenColor,))
-                    ],
+                    BlocConsumer<UploadImageCubit, UploadImageState>(
+    listener: (context, state) {
+    if (state is ModelSuccess) {
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (BuildContext context) => Treatment(
+    imageUrl:
+    UploadImageCubit.get(context).image,
+    treatmentContent:
+    state.aiModel.treatmentContent)),);}
+    }, builder: (context, state) {
+    return  InkWell(
+    onTap: () {
+    UploadImageCubit.get(context).getPlantData(image: UploadImageCubit().image!);
+    Expanded(
+    child: CustomBottom(name: "Done", width:203.w, height: 37.h,color: AppColors.clearGreenColor,),
+    );});}) ],
                   ),
                 ),
               ],

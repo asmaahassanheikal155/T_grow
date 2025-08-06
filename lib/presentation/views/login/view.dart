@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:t_grow/cubit/login_cubit/state_cubit.dart';
 import 'package:t_grow/presentation/components/custom_bottom.dart';
 import 'package:t_grow/presentation/views/home_screen/view.dart';
 import '../../../app/app_colors.dart';
 import '../../../app/app_images.dart';
+import '../../../cubit/login_cubit/user__cubit.dart';
 import '../first_photo/view.dart';
 import '../forget_password/view.dart';
 import '../sign_up/view.dart';
@@ -16,10 +19,16 @@ class LogIn extends StatefulWidget {
   State<LogIn> createState() => _LogInState();
 }
 
+final formKeyy = GlobalKey<FormState>();
+final emailController =TextEditingController();
+final passwordController =TextEditingController();
 class _LogInState extends State<LogIn> {
+  
+  @override
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
         body:Stack(
           children: [
 
@@ -39,6 +48,7 @@ class _LogInState extends State<LogIn> {
                     Image.asset(AppImages.TGrowLogo),
                     SizedBox(height: 50.h,),
                     TextFormField(
+                      controller:emailController ,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         filled: true,
@@ -56,6 +66,7 @@ class _LogInState extends State<LogIn> {
                     ),
                     SizedBox(height: 30.h),
                     TextFormField(
+                      controller: passwordController,
                       obscureText: true,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
@@ -104,7 +115,8 @@ class _LogInState extends State<LogIn> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>  const FirstPhoto()));
+                                  builder: (context) =>  FirstPhoto(email: UserCubit.get(context).emailController.toString(),
+                                    password: UserCubit.get(context).passwordController.toString(),)));
                         },
                         child: CustomBottom(
                             name: "Login", width: 344.w, height: 49)),
@@ -180,6 +192,9 @@ class _LogInState extends State<LogIn> {
               ),
             )],
         )
-    );
+
+
+
+);
   }
 }

@@ -27,8 +27,6 @@ class RegisterCubit extends Cubit<RegisterStates> {
         "Password": passwordController.text,
         "Email": emailController.text,
         "ConfirmPassword":confirmationPasswordController.text
-
-
       });
       if (response!.isSuccess) {
         navigateTo(const LogIn());

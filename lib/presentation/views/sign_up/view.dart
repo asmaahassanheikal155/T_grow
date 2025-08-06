@@ -25,22 +25,15 @@ class _SignUpState extends State<SignUp> {
   void _toggle() {
     setState(() {
       _obscureText = !_obscureText;
-    });
-  }
-
+    });}
   @override
   void initState() {
     super.initState();
-    cubit = BlocProvider.of(context);
-  }
-
+    cubit = BlocProvider.of(context);}
   bool isLoading = false;
-
   void register() async {
     isLoading = true;
-    setState(() {});
-  }
-
+    setState(() {});}
   bool _obscureText = true;
 
 
@@ -200,10 +193,10 @@ class _SignUpState extends State<SignUp> {
                         else {
                           return  InkWell(
                               onTap: () {
-                                if (cubit.formKey.currentState!.validate()) {
-                                  cubit.register();
-                                }
-                              },
+    if (cubit.formKey.currentState!.validate()) {
+    cubit.register();
+    }
+    },
                               child: CustomBottom(
                                 name: "Sing Up",
                                 height: 49.h,
