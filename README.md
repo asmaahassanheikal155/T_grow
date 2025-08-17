@@ -1,16 +1,29 @@
 # t_grow
 
-A new Flutter project.
+This is my graduation project .A smart application to identify diseases of tomato leaves and find suitable treatments, with the presence of a chatbot feature to inquire about some diseases or appropriate treatments.
+# App Photos
+## Onboarding Screens
+![boording (1)](boording%20(1).png)  
+![boording (2)](boording%20(2).png)  
+![boording (3)](boording%20(3).png)  
+![boording](boording.png)  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Authentication
+![login](login.png)  
+![second](second.png)  
 
-A few resources to get you started if this is your first Flutter project:
+---## Main Screens
+![main](main.png)  
+![home2](home2.png)  
+![plant](plant.png)  
+![History](History.png)  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+![scan (1)](scan%20(1).png)  
+![scan (2)](scan%20(2).png)  
+![scan](scan.png)  
+![Chat-Bot](Chat-Bot.png)  
